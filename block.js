@@ -12,12 +12,19 @@ class Block {
       Timestamp: ${this.timestamp}
       Last Hash: ${this.lastHash.substring(0, 10)}
       Hash: ${this.hash.substring(0, 10)}
-      Data: ${this.data}`;
+      Data: ${this.data}`
   }
 
   static genesis() {
     return new this('Genesis time', '---', 'f2324', [])
   }
+
+  static mineBlock(lastBlock, data) {
+    const timestamp = Date.now()
+    const lastHash = lastBlock.hash
+    const hash = 'TODO'
+    return new this(timestamp, lastHash, hash, data)
+  }
 }
 
-module.exports = Block;
+module.exports = Block
