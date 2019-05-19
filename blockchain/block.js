@@ -1,5 +1,5 @@
 const SHA256 = require('crypto-js/sha256')
-const DIFFICULTY = 4
+const {DIFFICULTY} = require('../config')
 
 class Block {
 
@@ -16,7 +16,7 @@ class Block {
       Timestamp: ${this.timestamp}
       Last Hash: ${this.lastHash.substring(0, 10)}
       Hash: ${this.hash.substring(0, 10)}
-      Nonce: ${this.nonce}`
+      Nonce: ${this.nonce}
       Data: ${this.data}`
   }
 
