@@ -1,6 +1,11 @@
+/*
 const Wallet = require('./wallet')
 const wallet = new Wallet()
 console.log(wallet.toString())
+*/
+
+const ChainUtil = require('./chain-util')
+console.log(ChainUtil.id())
 
 /*
 const Blockchain = require('./blockchain');
