@@ -4,7 +4,7 @@ class Transaction {
   constructor() {
     this.id = ChainUtil.id()
     this.input = null
-    this.output = []
+    this.outputs = []
   }
 
   static newTransaction(senderWallet, recipient, amount) {
@@ -29,6 +29,5 @@ class Transaction {
     return transaction
   }
 }
-
 
 module.exports = Transaction
