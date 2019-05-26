@@ -45,5 +45,25 @@ describe('Transaction', () => {
       expect(transaction).toEqual(undefined)
     })
   })
+
+  describe('updating a tranasction', () => {
+    let nextAmount, nextRecipient
+
+    beforeEach(() => {
+        nextAmount = 20
+        nextAmount = 'sldfjkljw431'
+        transaction = transaction.update(wallet, nextRecipient, nextAmount)
+    })
+
+    it('subtracts the next amount from the senders output', () => {
+      expect(transaction.outputs.find(output => output.address === wallet.publicKey).amount)
+        .toEqual(wallet.balance - amount - nextAmount)
+    })
+
+    it('outputs am amount for the next recipient', () => {
+      expect(transaction.outputs.find(output => output.address === nextRecipient).amount)
+        .toEqual(nextAmount)
+    })
+  })
 })
 
