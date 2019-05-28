@@ -14,7 +14,12 @@ class TransactionPool {
       this.transactions.push(transaction)
     }
   }
-}
 
+  existingTransaction(address) {
+    return this.transactions.find((t) => {
+      return t.input.address === address
+    })
+  }
+}
 
 module.exports = TransactionPool
