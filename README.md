@@ -1,1 +1,3 @@
-# test-blockchain
+# node-blockchain
+
+test and experiment blockchain
