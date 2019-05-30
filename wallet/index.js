@@ -30,9 +30,11 @@ class Wallet {
     if(transaction) {
       transaction.update(this, recipient, amount)
     } else {
-      transaction = Transaction.new(this, recipient, amount)
+      transaction = Transaction.newTransaction(this, recipient, amount)
       transactionPool.updateOrAddTransaction(transaction)
     }
+
+    return transaction
   }
 }
 
