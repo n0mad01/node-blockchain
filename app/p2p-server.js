@@ -46,9 +46,15 @@ class P2pServer {
     socket.on('message', message => {
       //const data = JSON.parse(JSON.stringify(message))
       const data = JSON.parse(message)
-      console.log('data', data)
-
-      this.blockchain.replaceChain(data)
+      //console.log('data', data)
+      switch(data.type) {
+        case MESSAGE_TYPES.chain:
+          this.blockchain.replaceChain(data.chain)
+          break
+        case MESSAGE_TYPES.transaction:
+          this.transactionPool.updateOrAddTransaction(data.transaction) 
+          break
+      }
     })
   }
 
