@@ -42,6 +42,10 @@ class TransactionPool {
       return transaction
     })
   }
+
+  clear() {
+    this.transactions = []
+  }
 }
 
 module.exports = TransactionPool

@@ -32,6 +32,11 @@ describe('TransactionPool', () => {
       .toEqual(oldTransaction)
   })
 
+  it('if clear transactions', () => {
+    tp.clear()
+    expect(tp.transactions).toEqual([])
+  })
+
   describe('mixing valid and corrupt transactions', () => {
     let validTransactions
   
